@@ -1,0 +1,45 @@
+---
+import type { Profile } from "../lib/profile";
+import { decorateCountryReferences } from "../lib/profile";
+
+interface Props {
+  person: Profile["person"];
+  portraitUrl: string;
+}
+
+const { person, portraitUrl } = Astro.props;
+---
+
+<section class="hero" aria-labelledby="page-title">
+  <div class="portrait-frame">
+    <img
+      src={portraitUrl}
+      alt={`Portrait of ${person.name}`}
+      width="640"
+      height="800"
+    />
+  </div>
+
+  <div class="identity">
+    <h1 id="page-title">{person.name}</h1>
+  </div>
+
+  <dl class="contact-grid">
+    <div>
+      <dt>Base</dt><dd set:html={decorateCountryReferences(person.location_short)} />
+    </div>
+    <div><dt>Born</dt><dd>{person.birth_date}</dd></div>
+    <div>
+      <dt>LinkedIn</dt><dd>
+        <a href={person.linkedin_url}>{person.linkedin_label}</a>
+      </dd>
+    </div>
+    <div>
+      <dt>GitHub</dt><dd>
+        <a href={person.github_url}>{person.github_label}</a>
+      </dd>
+    </div>
+  </dl>
+
+  <p class="identity-summary">{person.summary}</p>
+</section>

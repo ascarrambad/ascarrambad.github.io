@@ -1,0 +1,263 @@
+person:
+  name: Matteo Riva
+  title: Computer Vision and Software Engineer
+  birth_date: 07.02.1994
+  location_short: Lugano (CH)
+  linkedin_label: teo.riva
+  linkedin_url: https://www.linkedin.com/in/teoriva
+  github_label: ascarrambad
+  github_url: https://github.com/ascarrambad
+  portrait: /profile.jpg
+  summary: >-
+    Experienced computer vision and software engineer. Passionate about precision,
+    simplicity, and well-structured solutions. Eager to contribute to a technical
+    and creative team to develop cutting-edge products.
+
+cv:
+  url: /matteo-riva-cv.pdf
+
+about:
+  - >-
+      When I was a child, I became fascinated by computers thanks to the
+      countless hours spent watching my dad playing videogames. Since
+      elementary school I tried to learn some BASIC using what I could find in
+      my local library, but it was really during middle school that I was able
+      to take some afternoon extra classes in the computer lab, where I
+      "developed" some toy programs in Visual Basic 6.
+  - >-
+      After a taxing period in high school I enrolled at PoliMI, but soon after
+      that I figured out I would not become an engineer. During that time I
+      created a tech blog with a friend of mine called "Something Divine". We
+      also kept a podcast, accordingly named "Divinecast"; you can still look
+      it up. More importantly, I learned how to develop for iOS platforms by
+      myself, and the iOS app for the blog and podcast was my first creation.
+      Seeing it recognised by Apple meant a lot to me.
+  - >-
+      During my BSc studies I freelanced for a brief time as an iOS developer
+      thanks to the accumulated knowledge of developing seven iOS apps. At the
+      beginning of my MSc studies I got accepted for a joint program at USI,
+      where I focused on Deep Learning and managed to publish at ICASSP the
+      work produced for my thesis. After graduation, and after a perfectly
+      timed pandemic, I joined IDSIA first as a researcher and then as a PhD
+      student.
+  - >-
+      Daft Punk are my favorite artist. I also quite enjoy many other genres,
+      from jazz to country, though unfortunately I never cared enough to
+      remember many artists' names and song titles.
+  - >-
+      Back to the Future, Toy Story, and The Matrix are the movies I grew up
+      watching; Birdman, Drive, Frank, La grande bellezza, Monty Python's The
+      Meaning of Life, The Big Lebowsky, The Nice Guys, Lady Bird, and La La
+      Land are some of the movies I love.
+  - >-
+      Growing up I had to attend some mandatory sport, which I accordingly
+      disliked. The only one I enjoyed playing is field archery, in which I
+      participated as a young athlete at the Italian national cup. Nowadays I
+      try to maintain a rhythm of one hour per day of free-body exercises such
+      as yoga, pilates, power stretch, and core stability, as they work wonders
+      for my poor aching back.
+
+experience:
+  - company: Artificialy
+    location: Lugano, Switzerland
+    period: 02.2026 — ongoing
+    website: https://www.artificialy.com/
+    description: Swiss AI company developing and deploying tailored artificial intelligence solutions.
+    roles:
+      - title: Computer Vision and Software Engineer
+        period: 02.2026 — ongoing
+        highlights:
+          - text: >-
+              Developed an api-hub + webportal providing access to all company products
+              and services, used for client demos, internal usage, and commercial api access.
+            technologies:
+              - python
+              - java
+              - gitlab ci/cd
+              - docker
+              - uv
+              - atlas
+              - fastapi
+              - traefik
+              - keycloak
+              - qdrant
+              - postgres
+              - valkey
+              - garage/seaweedfs
+              - openai-compliant apis
+          - text: >-
+              Refactored a PoC project into a production-ready system running on Jetson
+              hardware for real-time inspection in a pavents-tile production facility.
+            technologies:
+              [python, c, docker, aravissrc + deepstream, zeromq, opencv, numpy]
+          - text: >-
+              Contributed to the design and development of a microphone and VAD system
+              evaluation pipeline to improve audio segmentation for an interactive agent.
+            technologies: [python, javad, silero, mlflow]
+
+  - company: Delvitech
+    location: Mendrisio, Switzerland
+    period: 06.2023 — 01.2026
+    website: https://www.delvi.tech/
+    description: Swiss company developing AI-based Automated Optical Inspection systems for electronics manufacturing.
+    roles:
+      - title: Senior Computer Vision and Software Engineer
+        period: 12.2024 — 01.2026
+        highlights:
+          - text: Organization of sprints and tasks among cross-functional teams.
+          - text: Collection of product requirements in collaboration with the PO and translation into technical specifications and functional requirements.
+          - text: Design of the overall system architecture, with a focus on vision modules and system behavior.
+      - title: Computer Vision and Software Engineer
+        period: 06.2023 — 12.2024
+        highlights:
+          - text: Designed and developed a distributed PatchCore anomaly detector implementation in a real-time prod environment; whole pipeline runs in ~90 ms.
+            technologies:
+              [
+                python,
+                java,
+                grpc,
+                torch,
+                faiss,
+                scipy,
+                onnx-runtime,
+                opencv,
+                numpy,
+              ]
+          - text: Designed and developed an image preprocessing barcode reader pipeline, supporting 1D and 2D codes printed, laser-etched, heavily damaged, etc.; whole routine runs in ~100 ms.
+            technologies: [java, opencv, zxing, libdmtx]
+          - text: Several JNIs to integrate C++ libraries with the Java runtime.
+            technologies: [c, c++, java, libdmtx, zxing-cpp]
+          - text: Designed and developed an optical head simulator using a physics-based rendering system to create synthetic imagery.
+            technologies: [python, mitsuba, pybullet, scipy, opencv, numpy]
+          - text: Trained and deployed several production vision DL models under data availability, inference time, and memory constraints.
+            technologies: [python, opencv, imgaug, torch, onnx, tensorrt]
+          - text: Several projects involving classical computer vision techniques, including phase shift profilometry for 3D reconstruction.
+            technologies: [python, c++, numba, cupy, scipy, numpy, opencv]
+
+  - company: IDSIA — Dalle Molle Institute for AI
+    location: Lugano, Switzerland
+    period: 03.2019 — 10.2022
+    website: https://www.idsia.ch/
+    description: Joint AI research institute of USI and SUPSI; projects funded by Innosuisse and SNSF.
+    roles:
+      - title: Machine Learning Researcher
+        period: 09.2020 — 10.2022
+        highlights:
+          - text: Graph reconstruction and multivariate time series analysis and forecasting.
+          - text: Day-ahead prediction of photovoltaic energy production.
+          - text: Rainfall-runoff model to infer the likelihood of floods in a given river.
+          - text: Research focus on spatiotemporal data processing using graph representations and Graph Neural Networks.
+            technologies:
+              [
+                python,
+                torch,
+                torch-geometric,
+                numpy,
+                pandas,
+                geopandas,
+                mongodb,
+              ]
+      - title: Teaching Assistant
+        period: 09.2020 — 10.2022
+        highlights:
+          - text: Prepared and graded homework assignments, midterm projects, and written exams for the Databases (M.Sc.) and Machine Learning (B.Sc.) courses.
+          - text: Prepared and taught the practical classes and labs for both courses.
+            technologies: [mysql, mongodb]
+      - title: Machine Learning Intern
+        period: 03.2019 — 10.2019
+        highlights:
+          - text: Developed a lipreading system for speaker-independent word recognition using Recurrent Neural Networks (LSTM) and CNNs.
+            technologies: [python, sacred, tensorflow 1 + 2, numpy]
+
+  - company: Monkey Cube, Rebrandly & ExMachina
+    location: Milan and Rome, Italy
+    period: 2014 — 2017
+    description: Software companies focused on iOS applications, mobile solutions, and digital communication.
+    roles:
+      - title: iOS Fullstack Engineer
+        period: 2014 — 2017
+        highlights:
+          - text: Designed and developed backend and frontend of three native iOS apps written in Swift from scratch, including widgets and share extensions.
+          - text: Porting of old code base from Objective-C to Swift.
+            technologies:
+              [
+                swift,
+                objective-c,
+                ios frameworks,
+                cocoapods,
+                3rd-party rest apis,
+              ]
+
+projects:
+  - title: Linear motion-controller utility
+    highlights:
+      - Developed a small utility to remotely connect via EtherCAT to an HIWIN motion controller to perform basic axis-independent movements using low-level position-control APIs.
+  - title: Several opensource JNIs for 2D code decoding
+    highlights:
+      - Developed JNIs for libquirc and libwechat-zxing-cpp (part of OpenCV-contrib) to enable 2D QR and Datamatrix decoding with high performance C/C++ libraries, handy if your codebase is in Java.
+  - title: Fast NN Prototyping Framework
+    highlights:
+      - Scalable software framework exploiting TensorFlow for neural network building using text strings.
+      - Proved effective for scaling from simple toy models to complex deep learning architectures.
+  - title: Hand detection and hand-gesture classification for IoT
+    highlights:
+      - Controls the specified IoT devices over the network, allowing users to turn them on/off or adjust their settings with hand gestures.
+  - title: Several iOS apps, some recognized as “Best of the week”
+    highlights:
+      - Remote mouse control Wii-style, public transports, music player, blog and podcast, tv-shows scheduler.
+
+skills:
+  practical:
+    - label: Vision models
+      items: [YOLO, UNet, ResNet, Siamese networks]
+    - label: 3D Reconstruction & Generation
+      items: [Phase-Shift Profilometry (PSP), NeRFs, open3d, pydraco]
+    - label: Forecasting models
+      items:
+        [
+          RNNs,
+          Transformers,
+          Temporal Convolutional Networks,
+          Graph Convolutional Networks,
+        ]
+    - label: Miscellaneous
+      items:
+        - pyqt
+        - qt-designer
+        - matplotlib
+        - bokeh
+        - plotly
+        - git
+        - docker
+        - docker-compose
+        - nvidia-triton
+        - shell
+        - cmake
+        - vcpkg
+  languages:
+    - flag: IT
+      label: native Italian
+    - flag: GB
+      label: fluent English — IELTS certificate
+    - flag: DE
+      label: A2-level German
+  soft:
+    - Collaboration in multicultural environments
+    - People-coordination, organizational skills
+    - Quick learner with strong problem-solving skills
+    - Attention to detail and focus on quality
+    - High sensibility to overall product functionality, capabilities, and software coherence
+
+education:
+  - period: "2022"
+    title: ETH-CSCS Summer School
+    institution: Lugano (CH)
+    detail: GPU & ARM architectures fundamentals — CUDA, OpenACC, and Kokkos.
+  - period: 10.2017 — 04.2020
+    title: M.Sc. in Informatics and M.Sc. in Computer Science
+    institution: Università della Svizzera italiana (CH) — Università degli Studi di Milano-Bicocca (IT)
+    detail: "Thesis: “Speaker-independent Lipreading with Neural Networks Exploiting Motion Dynamics”"
+  - period: 09.2014 — 10.2017
+    title: B.Sc. in Computer Science
+    institution: Università degli Studi di Milano-Bicocca (IT)
+    detail: "Thesis: “CareLine: iterative design and development of an iOS app guided by a usability study”"

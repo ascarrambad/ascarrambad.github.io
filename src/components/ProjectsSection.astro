@@ -1,0 +1,30 @@
+---
+import type { Profile } from "../lib/profile";
+
+interface Props {
+  projects: Profile["projects"];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="content-section" id="projects" aria-labelledby="projects-title">
+  <h2 id="projects-title">Personal Projects</h2>
+
+  <div class="project-list">
+    {
+      projects.map((project) => (
+        <article>
+          <h3>{project.title}</h3>
+          <ul>
+            {project.highlights.map((highlight) => (
+              <li>
+                <span class="bullet-copy">{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))
+    }
+  </div>
+</section>

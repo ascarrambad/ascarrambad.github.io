@@ -1,0 +1,48 @@
+---
+import type { Profile } from "../lib/profile";
+
+interface Props {
+  skills: Profile["skills"];
+}
+
+const { skills } = Astro.props;
+---
+
+<section class="skills-section" aria-labelledby="skills-title">
+  <div class="practical-skills">
+    <h2 id="skills-title">Practical Skills</h2>
+    <dl>
+      {
+        skills.practical.map((group) => (
+          <div>
+            <dt>{group.label}</dt>
+            <dd>{group.items.join(", ")}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+
+  <div class="people-skills">
+    <section aria-labelledby="language-skills-title">
+      <h2 id="language-skills-title">Language Skills</h2>
+      <ul class="language-list">
+        {skills.languages.map((item) => (
+          <li>
+            <span class="language-flag" aria-hidden="true">
+              {item.flag}
+            </span>
+            <span>{item.label}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="soft-skills-title">
+      <h2 id="soft-skills-title">Soft Skills</h2>
+      <ul>
+        {skills.soft.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,159 @@
+<div class="time-machine" aria-hidden="true">
+  <svg viewBox="0 0 520 72" role="presentation">
+    <!-- Road Line -->
+    <line class="road" x1="0" y1="67" x2="520" y2="67"></line>
+
+    <!-- Vehicle Group (translates to the right) -->
+    <g class="vehicle">
+      <!-- Speed Lines (stream backwards relative to the car) -->
+      <g class="speed-lines-container">
+        <g class="speed-lines-stream">
+          <path d="M2 38h32M8 46h19M0 53h25"></path>
+        </g>
+      </g>
+
+      <!-- DeLorean Car -->
+      <g class="car">
+        <path d="M18 52 12 47l5-12 39-4 25-15h48l26 16 26 5 12 10-4 7-17 2H35Z"
+        ></path>
+        <path d="m61 31 24-12h40l21 13Z"></path>
+        <path d="M96 19v13m31-12 8 12M57 35l-9 17m105-18 13 18"></path>
+        <path d="M68 36h73l10 16H55Zm21 1-3 15m45-15 5 15"></path>
+        <path d="M18 40h25m117-2 17 4m-8 5h20M23 47h13"></path>
+        <path d="M74 56h65"></path>
+        <!-- Rear Wheel (concentric circles, no spokes) -->
+        <circle cx="53" cy="54" r="13"></circle>
+        <circle cx="53" cy="54" r="7"></circle>
+        <!-- Front Wheel (concentric circles, no spokes) -->
+        <circle cx="155" cy="54" r="13"></circle>
+        <circle cx="155" cy="54" r="7"></circle>
+      </g>
+    </g>
+  </svg>
+</div>
+
+<style>
+  .time-machine {
+    width: min(100%, 430px);
+    height: 52px;
+    overflow: hidden;
+    color: #000;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* All lines and shapes use a consistent clean stroke */
+  path,
+  circle,
+  line {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.45;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* The road line has a clean opacity to keep focus on the car */
+  .road {
+    stroke-width: 1.45;
+    opacity: 0.4;
+  }
+
+  /* The vehicle translation animation */
+  .vehicle {
+    animation: drive-off-future 22s linear infinite;
+  }
+
+  /* Speed lines visibility on the 22s cycle */
+  .speed-lines-container {
+    animation: speed-lines-visibility 22s linear infinite;
+  }
+
+  /* Speed lines rapid streaming effect when visible */
+  .speed-lines-stream {
+    animation: stream-lines 0.12s linear infinite;
+  }
+
+  /* Vehicle drives off the screen with cubic-bezier ease-in physical acceleration */
+  @keyframes drive-off-future {
+    0%,
+    60% {
+      transform: translateX(0);
+      opacity: 1;
+      animation-timing-function: cubic-bezier(0.7, 0, 0.85, 0.3);
+    }
+    70% {
+      transform: translateX(540px);
+      opacity: 1;
+    }
+    70.1%,
+    98% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Speed lines stream backwards and fade out */
+  @keyframes stream-lines {
+    0% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.8;
+    }
+    85% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(-35px);
+      opacity: 0;
+    }
+  }
+
+  /* Speed lines are only visible during the acceleration phase (60% to 70%) */
+  @keyframes speed-lines-visibility {
+    0%,
+    59.9% {
+      opacity: 0;
+    }
+    60%,
+    69.9% {
+      opacity: 1;
+    }
+    70%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .time-machine {
+      width: min(100%, 300px);
+      height: 42px;
+    }
+  }
+
+  /* Accessibility fallback: disable motion, keep car static on the road */
+  @media (prefers-reduced-motion: reduce) {
+    .vehicle,
+    .speed-lines-container,
+    .speed-lines-stream {
+      animation: none !important;
+    }
+
+    .speed-lines-container {
+      opacity: 0 !important;
+    }
+  }
+</style>

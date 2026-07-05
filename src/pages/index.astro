@@ -1,0 +1,37 @@
+---
+import AboutSection from "../components/AboutSection.astro";
+import EducationSection from "../components/EducationSection.astro";
+import ExperienceSection from "../components/ExperienceSection.astro";
+import Hero from "../components/Hero.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SkillsSection from "../components/SkillsSection.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile, publicAsset } from "../lib/profile";
+
+const portraitUrl = publicAsset(profile.person.portrait);
+const cvUrl = publicAsset(profile.cv.url);
+const pageTitle = `${profile.person.name} — ${profile.person.title}`;
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={profile.person.summary}
+  image={portraitUrl}
+  personName={profile.person.name}
+  jobTitle={profile.person.title}
+  githubUrl={profile.person.github_url}
+  linkedinUrl={profile.person.linkedin_url}
+>
+  <SiteHeader cvUrl={cvUrl} />
+  <main id="content">
+    <Hero person={profile.person} portraitUrl={portraitUrl} />
+    <ExperienceSection experience={profile.experience} />
+    <ProjectsSection projects={profile.projects} />
+    <SkillsSection skills={profile.skills} />
+    <EducationSection education={profile.education} />
+    <AboutSection about={profile.about} />
+  </main>
+  <SiteFooter name={profile.person.name} />
+</BaseLayout>

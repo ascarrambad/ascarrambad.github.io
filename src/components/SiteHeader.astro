@@ -1,0 +1,18 @@
+---
+interface Props {
+  cvUrl: string;
+}
+
+const { cvUrl } = Astro.props;
+---
+
+<header class="site-nav" aria-label="Primary navigation">
+  <nav aria-label="On this page">
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills-title">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#about">About</a>
+  </nav>
+  <a class="nav-cv" href={cvUrl}>CV · PDF</a>
+</header>

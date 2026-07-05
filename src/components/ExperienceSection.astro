@@ -1,0 +1,76 @@
+---
+import type { Profile } from "../lib/profile";
+import { decorateCountryReferences } from "../lib/profile";
+import TagList from "./TagList.astro";
+
+interface Props {
+  experience: Profile["experience"];
+}
+
+const { experience } = Astro.props;
+---
+
+<section
+  class="content-section"
+  id="experience"
+  aria-labelledby="experience-title"
+>
+  <h2 id="experience-title">Work Experience</h2>
+
+  <div class="experience-list">
+    {
+      experience.map((job) => (
+        <article class="experience-item">
+          <header class="employer">
+            <div class="employer-heading">
+              <h3>{job.company}</h3>
+              {job.website && (
+                <a
+                  class="employer-website"
+                  href={job.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Visit ${job.company} website`}
+                >
+                  Web ↗
+                </a>
+              )}
+            </div>
+            <p
+              class="employer-location"
+              set:html={decorateCountryReferences(job.location)}
+            />
+            <p class="employer-period">{job.period}</p>
+            <p class="employer-description">{job.description}</p>
+          </header>
+
+          <div class="roles">
+            {job.roles.map((role) => (
+              <div class="role">
+                <div class="role-heading">
+                  <h4>{role.title}</h4>
+                  <p class="role-period date-pill">{role.period}</p>
+                </div>
+                <div class="role-body">
+                  <ul class="highlight-list">
+                    {role.highlights.map((highlight) => (
+                      <li>
+                        <span class="bullet-copy">{highlight.text}</span>
+                        {highlight.technologies && (
+                          <TagList
+                            items={highlight.technologies}
+                            label="Technologies used"
+                          />
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

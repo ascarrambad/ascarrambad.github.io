@@ -1,0 +1,15 @@
+---
+interface Props {
+  about: string[];
+}
+
+const { about } = Astro.props;
+---
+
+<section class="content-section about-section" id="about" aria-labelledby="about-title">
+  <h2 id="about-title">About Me</h2>
+
+  <div class="about-copy">
+    {about.map((paragraph) => <p>{paragraph}</p>)}
+  </div>
+</section>

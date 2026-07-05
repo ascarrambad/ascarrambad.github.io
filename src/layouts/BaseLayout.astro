@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  personName: string;
+  jobTitle: string;
+  githubUrl: string;
+  linkedinUrl: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  personName,
+  jobTitle,
+  githubUrl,
+  linkedinUrl,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, canonicalUrl);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: personName,
+  jobTitle,
+  url: canonicalUrl.href,
+  sameAs: [githubUrl, linkedinUrl],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#d2d2d2" />
+    <meta property="og:title" content={personName} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImage} />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>{title}</title>
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(structuredData)}
+    />
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <slot />
+  </body>
+</html>

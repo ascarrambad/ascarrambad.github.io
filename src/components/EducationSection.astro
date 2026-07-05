@@ -1,0 +1,35 @@
+---
+import type { Profile } from "../lib/profile";
+import { decorateCountryReferences } from "../lib/profile";
+
+interface Props {
+  education: Profile["education"];
+}
+
+const { education } = Astro.props;
+---
+
+<section
+  class="content-section education-section"
+  id="education"
+  aria-labelledby="education-title"
+>
+  <h2 id="education-title">Education</h2>
+
+  <div class="education-list">
+    {
+      education.map((item) => (
+        <article>
+          <p class="period date-pill">{item.period}</p>
+          <div class="education-detail">
+            <h3>{item.title}</h3>
+            {item.institution && (
+              <p set:html={decorateCountryReferences(item.institution)} />
+            )}
+            <p>{item.detail}</p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
