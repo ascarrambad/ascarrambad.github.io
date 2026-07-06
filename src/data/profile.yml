@@ -230,8 +230,6 @@ skills:
         - bokeh
         - plotly
         - git
-        - docker
-        - docker-compose
         - nvidia-triton
         - shell
         - cmake
@@ -244,7 +242,6 @@ skills:
     - flag: DE
       label: A2-level German
   soft:
-    - Collaboration in multicultural environments
     - People-coordination, organizational skills
     - Quick learner with strong problem-solving skills
     - Attention to detail and focus on quality
