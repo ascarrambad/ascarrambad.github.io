@@ -80,10 +80,11 @@ experience:
               - fastapi
               - traefik
               - keycloak
+              - sqlalchemy
               - qdrant
               - postgres
               - valkey
-              - garage/seaweedfs
+              - garage
               - openai-compliant apis
           - text: >-
               Refactored a PoC project into a production-ready system running on Jetson
@@ -93,7 +94,7 @@ experience:
           - text: >-
               Contributed to the design and development of a microphone and VAD system
               evaluation pipeline to improve audio segmentation for an interactive agent.
-            technologies: [python, javad, silero, mlflow]
+            technologies: [python, javad, silero, lakefs, label-studio, mlflow]
 
   - company: Delvitech
     location: Mendrisio, Switzerland
@@ -105,8 +106,8 @@ experience:
         period: 12.2024 — 01.2026
         highlights:
           - text: Organization of sprints and tasks among cross-functional teams.
-          - text: Collection of product requirements in collaboration with the PO and translation into technical specifications and functional requirements.
-          - text: Design of the overall system architecture, with a focus on vision modules and system behavior.
+          - text: Collection of product requirements in collaboration with the PO and translation into a technical specifications and functional requirements.
+          - text: Design of the overall system architecture, closely lead 3 major projects/clients.
       - title: Computer Vision and Software Engineer
         period: 06.2023 — 12.2024
         highlights:
@@ -150,6 +151,7 @@ experience:
             technologies:
               [
                 python,
+                tensorflow,
                 torch,
                 torch-geometric,
                 numpy,
@@ -167,7 +169,7 @@ experience:
         period: 03.2019 — 10.2019
         highlights:
           - text: Developed a lipreading system for speaker-independent word recognition using Recurrent Neural Networks (LSTM) and CNNs.
-            technologies: [python, sacred, tensorflow 1 + 2, numpy]
+            technologies: [python, sacred, tensorflow 1, numpy]
 
   - company: Monkey Cube, Rebrandly & ExMachina
     location: Milan and Rome, Italy
@@ -254,7 +256,7 @@ education:
     institution: Lugano (CH)
     detail: GPU & ARM architectures fundamentals — CUDA, OpenACC, and Kokkos.
   - period: 10.2017 — 04.2020
-    title: M.Sc. in Informatics and M.Sc. in Computer Science
+    title: M.Sc. in Informatics and M.Sc. in Computer Science — double degree program
     institution: Università della Svizzera italiana (CH) — Università degli Studi di Milano-Bicocca (IT)
     detail: "Thesis: “Speaker-independent Lipreading with Neural Networks Exploiting Motion Dynamics”"
   - period: 09.2014 — 10.2017

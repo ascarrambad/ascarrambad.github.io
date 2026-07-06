@@ -288,7 +288,8 @@ footer {
   letter-spacing: -0.03em;
 }
 
-.content-section > h2 {
+.content-section > h2,
+.skills-section h2 {
   position: sticky;
   z-index: 12;
   top: var(--nav-height);
@@ -320,6 +321,9 @@ footer {
 }
 
 .employer {
+  position: sticky;
+  top: calc(var(--nav-height) + 3.25rem);
+  z-index: 6;
   align-self: start;
   padding: 0.5rem 0.58rem 0.56rem;
   background: var(--black);
